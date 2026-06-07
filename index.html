@@ -19,7 +19,7 @@
     </div>
 
     <nav>
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
             <li><a href="#">Home</a></li>
             <li><a href="#About">About</a></li>
             <li><a href="#Vision">Vision & Mission</a></li>
@@ -35,8 +35,8 @@
         Apply Now
     </a>
 
-    <div class="menu-toggle">
-        ☰
+    <div class="menu-toggle" id="menuToggle">
+    ☰
     </div>
 
 </header>
@@ -85,11 +85,18 @@
         <!-- RIGHT IMAGE -->
         <div class="hero-image">
             <img
-                src="img/hero1.webp"
+                src="img/img1.png"
                 alt="St George College">
         </div>
 
     </div>
+
+    <div class="hero-shapes">
+    <span class="shape circle"></span>
+    <span class="shape circle2"></span>
+    <span class="shape square"></span>
+    <span class="shape blob"></span>
+</div>
 
     <!-- STATS -->
     <!-- <div class="stats-container">
@@ -119,7 +126,7 @@
 
 <!-- ABOUT SECTION -->
 
-<section class="about reveal" id="About">
+<!-- <section class="about reveal" id="About">
 
     <div class="about-content">
 
@@ -131,6 +138,10 @@
             A Legacy of Excellence
             in Higher Education
         </h2>
+
+        <div class="about-image reveal-left" >
+        <img src="img/hero1.webp" alt="img">
+    </div>
 
         <p>
             St. George's College is dedicated to
@@ -152,8 +163,42 @@
 
     </div>
 
-    <div class="about-image" id="about-image reveal-left">
-        <img src="img/hero1.webp">
+    
+
+
+</section> -->
+
+
+<section class="about" id="About">
+
+  <div class="about-container">
+    <!-- LEFT SIDE -->
+    <div class="about-content">
+
+        <span class="about-tag">ABOUT US</span>
+
+        <h2>
+            A Legacy of Excellence<br>
+            in Higher Education
+        </h2>
+
+        <p>
+            St. George's College is dedicated to academic excellence, innovation, leadership,
+            and holistic student development. We empower learners with knowledge, skills,
+            and values for lifelong success.
+        </p>
+
+        <div class="about-buttons">
+            <a href="#" class="btn-primary">Explore More</a>
+            <a href="#" class="btn-outline">Apply Now</a>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="about-image">
+        <img src="img/img1.png" alt="About Image">
     </div>
 
 </section>
@@ -183,8 +228,8 @@
 
 <!-- VISION & MISSION SECTION -->
 <section class="vision-mission reveal" id="Vision">
-<div class="vm-block" >
 
+<div class="vm-block">
     <h2>Vision</h2>
 
     <div class="vm-grid">
@@ -249,6 +294,7 @@
     </div>
 
 </div>
+</section>
 
 <section class="courses reveal" id="Programs">
 
@@ -324,7 +370,7 @@
     <div class="gallery-grid">
 
         <div class="gallery-item large">
-            <img src="img/students.jpg" alt="">
+            <img src="img/student.png" alt="">
             <div class="overlay">
                 <h3>Campus Experience</h3>
             </div>
@@ -338,7 +384,7 @@
         </div> -->
 
         <div class="gallery-item">
-            <img src="img/lab.jpg" alt="">
+            <img src="img/labbb.png" alt="">
             <div class="overlay">
                 <h3>Computer Lab</h3>
             </div>
@@ -612,6 +658,27 @@ window.addEventListener("scroll", () => {
 });
 </script>
 <script>
+const toggle = document.getElementById("menuToggle");
+const nav = document.getElementById("navLinks");
+
+// open/close toggle
+toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+
+    if(nav.classList.contains("active")){
+        toggle.innerHTML = "✖";
+    } else {
+        toggle.innerHTML = "☰";
+    }
+});
+
+// 🔥 AUTO CLOSE WHEN CLICKING ANY LINK
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("active");
+        toggle.innerHTML = "☰";
+    });
+});
 
 const stats = document.querySelectorAll('.stat');
 
