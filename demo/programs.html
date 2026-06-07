@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. George's College | Empowering Minds Since 1974</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --navy: #0B2447;
+            --gold: #D4A017;
+        }
+
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', sans-serif;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(20px);
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(11, 36, 71, 0.75), rgba(11, 36, 71, 0.85)), 
+                        url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: var(--gold);
+            transition: width 0.4s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .program-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .program-card:hover {
+            transform: translateY(-20px) scale(1.03);
+            box-shadow: 0 30px 60px -15px rgb(212 160 23 / 0.3);
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+<body class="bg-[#F5F7FA] text-[#1A1A1A]">
+
+    <!-- NAVBAR -->
+    <nav class="glass fixed top-0 left-0 right-0 z-50 border-b border-white/40 shadow-xl">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 bg-[#0B2447] text-white rounded-2xl flex items-center justify-center text-3xl font-bold">SG</div>
+                <div class="heading-font text-2xl font-bold tracking-tighter">St. George's College</div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#home" class="nav-link cursor-pointer">Home</a>
+                <a href="#about" class="nav-link cursor-pointer">About</a>
+                <a href="#programs" class="nav-link cursor-pointer">Programs</a>
+                <a href="#admissions" class="nav-link cursor-pointer">Admissions</a>
+                <a href="#events" class="nav-link cursor-pointer">Events</a>
+                <a href="#contact" class="nav-link cursor-pointer">Contact</a>
+            </div>
+
+            <button onclick="document.getElementById('apply-modal').classList.toggle('hidden')" 
+                    class="bg-[#0B2447] hover:bg-[#1E3A5F] text-white px-6 py-3 rounded-2xl text-sm font-semibold transition-all">
+                Apply Now
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero-bg h-screen flex items-center relative text-white">
+        <div class="max-w-5xl mx-auto px-8 text-center relative z-10">
+            <h1 class="heading-font text-6xl md:text-7xl font-bold leading-tight mb-6 reveal" id="hero-title">
+                Empowering Minds.<br>Building Futures.
+            </h1>
+            <p class="max-w-2xl mx-auto text-xl mb-10 opacity-90 reveal" id="hero-subtitle">
+                Excellence in Education, Character & Leadership since 1974
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <button onclick="document.getElementById('apply-modal').classList.remove('hidden')" 
+                        class="px-10 py-5 bg-[#D4A017] text-[#0B2447] font-semibold rounded-3xl text-lg hover:scale-105 transition-all">
+                    Admissions Open 2026-27
+                </button>
+                <button onclick="document.getElementById('apply-modal').classList.remove('hidden')" 
+                        class="px-10 py-5 border-2 border-white hover:bg-white hover:text-[#0B2447] font-medium rounded-3xl text-lg transition-all">
+                    Explore More
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating Stats -->
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-8 text-center">
+            <div class="reveal" style="transition-delay: 200ms">
+                <div class="text-3xl font-bold">120+</div>
+                <div class="text-sm opacity-75">Years of Excellence</div>
+            </div>
+            <div class="reveal" style="transition-delay: 400ms">
+                <div class="text-3xl font-bold">4500+</div>
+                <div class="text-sm opacity-75">Students</div>
+            </div>
+            <div class="reveal" style="transition-delay: 600ms">
+                <div class="text-3xl font-bold">98%</div>
+                <div class="text-sm opacity-75">Placement Rate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="heading-font text-5xl font-semibold mb-6">Our Legacy.<br>Our Future.</h2>
+                    <p class="text-lg text-gray-600">Founded in 1974, St. George's College has been a beacon of knowledge and transformation.</p>
+                    
+                    <div class="mt-12 space-y-8">
+                        <div class="flex gap-6">
+                            <div class="w-12 h-12 bg-[#D4A017]/10 rounded-2xl flex items-center justify-center text-3xl">🏛️</div>
+                            <div>
+                                <div class="font-semibold text-xl">Our Mission</div>
+                                <div class="text-gray-600">To nurture curiosity and empower students to create a better tomorrow.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <img src="https://picsum.photos/id/1015/800/600" class="rounded-3xl shadow-2xl" alt="Campus">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section id="programs" class="py-24 bg-[#F5F7FA]">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="heading-font text-5xl font-semibold text-center mb-16 reveal">Our Programs</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="program-card bg-white rounded-3xl p-8 shadow-sm reveal">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-4xl mb-6">💻</div>
+                    <h3 class="text-2xl font-semibold mb-2">Computer Science</h3>
+                    <p class="text-gray-600">B.Sc &amp; BCA with AI &amp; ML focus</p>
+                </div>
+                <div class="program-card bg-white rounded-3xl p-8 shadow-sm reveal" style="transition-delay: 100ms">
+                    <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-4xl mb-6">📊</div>
+                    <h3 class="text-2xl font-semibold mb-2">Business Administration</h3>
+                    <p class="text-gray-600">BBA &amp; MBA</p>
+                </div>
+                <div class="program-card bg-white rounded-3xl p-8 shadow-sm reveal" style="transition-delay: 200ms">
+                    <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-4xl mb-6">⚖️</div>
+                    <h3 class="text-2xl font-semibold mb-2">Law</h3>
+                    <p class="text-gray-600">Integrated &amp; PG Programs</p>
+                </div>
+                <div class="program-card bg-white rounded-3xl p-8 shadow-sm reveal" style="transition-delay: 300ms">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-4xl mb-6">🧪</div>
+                    <h3 class="text-2xl font-semibold mb-2">Science &amp; Commerce</h3>
+                    <p class="text-gray-600">B.Sc, B.Com &amp; more</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="py-20 bg-[#0B2447] text-white">
+        <div class="max-w-7xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+            <div class="reveal"><div id="count1" class="text-6xl font-bold stat-number">4500</div><div class="text-[#D4A017]">Happy Students</div></div>
+            <div class="reveal"><div id="count2" class="text-6xl font-bold stat-number">200</div><div class="text-[#D4A017]">Expert Faculty</div></div>
+            <div class="reveal"><div id="count3" class="text-6xl font-bold stat-number">98</div><div class="text-[#D4A017]">Success Rate</div></div>
+            <div class="reveal"><div id="count4" class="text-6xl font-bold stat-number">120</div><div class="text-[#D4A017]">Years of Legacy</div></div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA + FOOTER -->
+    <footer class="bg-[#0B2447] text-white py-20">
+        <div class="max-w-7xl mx-auto px-8 text-center">
+            <h2 class="heading-font text-5xl mb-6">Ready to Join the Legacy?</h2>
+            <button onclick="document.getElementById('apply-modal').classList.remove('hidden')" 
+                    class="bg-[#D4A017] text-[#0B2447] px-12 py-6 rounded-3xl text-xl font-semibold">
+                Apply Now for 2026-27
+            </button>
+        </div>
+    </footer>
+
+    <!-- Apply Modal -->
+    <div id="apply-modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+        <div class="glass max-w-md w-full mx-4 rounded-3xl p-10">
+            <h3 class="text-3xl font-semibold mb-8">Start Your Application</h3>
+            <input type="text" placeholder="Full Name" class="w-full mb-5 px-6 py-4 rounded-2xl border focus:border-[#D4A017] outline-none">
+            <input type="email" placeholder="Email" class="w-full mb-5 px-6 py-4 rounded-2xl border focus:border-[#D4A017] outline-none">
+            <button onclick="submitApp()" class="w-full py-5 bg-[#0B2447] text-white rounded-3xl font-semibold">Submit Application</button>
+        </div>
+    </div>
+
+    <script>
+        // Scroll Reveal
+        function initScrollReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.15 });
+            
+            reveals.forEach(el => observer.observe(el));
+        }
+
+        // Counter Animation
+        function animateValue(id, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                document.getElementById(id).textContent = value;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    document.getElementById(id).textContent = end;
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        function triggerCounters() {
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    animateValue("count1", 1000, 4500, 2000);
+                    animateValue("count2", 50, 200, 1800);
+                    animateValue("count3", 70, 98, 1500);
+                    animateValue("count4", 50, 120, 2200);
+                    observer.disconnect();
+                }
+            }, { threshold: 0.7 });
+            
+            observer.observe(document.querySelector('#count1').parentElement);
+        }
+
+        function submitApp() {
+            alert("🎉 Application submitted successfully! Our team will contact you soon.");
+            document.getElementById('apply-modal').classList.add('hidden');
+        }
+
+        // Initialize
+        window.onload = function() {
+            initScrollReveal();
+            triggerCounters();
+            
+            // Smooth scroll for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        };
+    </script>
+</body>
+</html>
